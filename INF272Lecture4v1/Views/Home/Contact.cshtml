@@ -1,0 +1,61 @@
+﻿@*second version of the creation of a Form where an object is sent to method/action called form2 in the HomeControler. HtmlHelpers are used in this example*@
+@model INF272Lecture4v1.Models.PersonModel
+@{
+    ViewBag.Title = "Contact";
+}
+
+@*For the display of the entered values*@
+<h4 style="color:purple">
+    <b>Student Number</b>    @ViewBag.StudentNumber <br />
+    <b>First Name</b>    @ViewBag.FirstName <br />
+    <b>Last Name</b> @ViewBag.LastName <br />
+    <b>EmailAddress</b> @ViewBag.EmailAddress <br />
+    <b>LINK</b> @ViewBag.myLink
+</h4>
+<hr />
+<h3><b>Forms: Strongly Typed</b></h3>
+
+@*Creating the form to send an object to Form2 in the HomeController using method POST*@
+@using (Html.BeginForm("Form2", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.StudentNumber)
+    @Html.EditorFor(m => m.StudentNumber)
+
+    @Html.LabelFor(m => m.FirstName)
+    @Html.EditorFor(m => m.FirstName)
+
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+
+    @Html.LabelFor(m => m.EmailAddress)
+    @Html.EditorFor(m => m.EmailAddress)
+
+    @Html.LabelFor(m => m.myLink)
+    @Html.EditorFor(m => m.myLink)
+    < br />
+
+
+
+
+<input type="submit" value="LINK" />
+
+}
+
+@*First version of the creation of a Form where singe items are sent to method/action called form 1 in the HomeControler - in this version no model is used.*@
+@*<form action="form1" method="post">
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="isAlive">Is Alive:</label><br>
+        <input type="checkbox" name="isAlive" /><br >
+
+           <input type="submit" value="Submit Form" />
+
+    </form>*@
