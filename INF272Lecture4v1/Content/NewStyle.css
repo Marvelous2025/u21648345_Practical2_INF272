@@ -27,6 +27,7 @@ h1 {
 
     .menu li {
         margin: 0;
+        position: relative; /* Needed for dropdown positioning */
     }
 
     .menu a {
@@ -52,6 +53,30 @@ h1 {
         background-color: grey; /* Grey background on hover */
     }
 
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 160px;
+    z-index: 1000; /* Ensure dropdown appears above other content */
+}
+
+    .dropdown-menu li a {
+        padding: 10px 15px;
+        border-right: none; /* Remove border for dropdown items */
+        text-align: left;
+    }
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
 /* Responsive behavior for menu */
 @media (max-width: 600px) {
     .menu {
@@ -64,6 +89,10 @@ h1 {
             text-align: center;
             border-right: none; /* Remove border in mobile view */
         }
+
+    .dropdown-menu {
+        position: static; /* Stack dropdown items vertically in mobile view */
+    }
 }
 
 /* Body content styles */

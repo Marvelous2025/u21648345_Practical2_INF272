@@ -53,7 +53,18 @@
 <body>
     <ul id="menu">
         <li>@Html.ActionLink("Simple Starting Sample", "Index", "Home")</li>
-        <li>@Html.ActionLink("List of People", "PeopleView", "Home")</li> 
+        @*<li>@Html.ActionLink("List of People", "PeopleView", "Home")</li>*@
+        <li class="dropdown">
+            <a href="#">List of People</a>
+            <ul class="dropdown-menu">
+                <li><a href="../People/PeopleView">Complete List of People</a></li>
+                <li><a href="../HTML/Person01.html">Person 01</a></li>
+                <li><a href="../HTML/Person02.html">Person 02</a></li>
+                <li><a href="../HTML/Person03.html">Person 03</a></li>
+                <li><a href="../HTML/Person04.html">Person 04</a></li>
+                <li><a href="../HTML/Person05.html">Person 05</a></li>
+            </ul>
+        </li>
     </ul>
     <section id="main">
         @RenderBody()
